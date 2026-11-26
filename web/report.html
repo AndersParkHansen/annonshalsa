@@ -5,6 +5,17 @@
 <body>
 <header class="mast"><div class="wrap bar"><div class="wordmark"><span class="logo" aria-hidden="true"><i></i><i></i><i></i></span>Annonshälsa</div><button id="new" class="light">Ny URL-kontroll</button></div></header>
 <main class="wrap">
+<section id="launch" class="panel launcher" hidden aria-labelledby="launch-title">
+<h2 id="launch-title">Kontrollera en webbadress</h2>
+<form id="launch-form">
+<label for="launch-url">Sidans URL</label>
+<div class="launch-row"><input id="launch-url" type="text" inputmode="url" autocomplete="url" autocapitalize="none" spellcheck="false" placeholder="https://exempel.se/artikel" required><button id="launch-submit">Starta kontroll</button></div>
+</form>
+<p class="sub">Mäter publika HTTPS-sidor på mobil och dator. Adressen och resultatet blir synliga i repots körning.</p>
+<div id="launch-feedback" role="status" aria-live="polite"></div>
+<div class="launch-links" id="launch-links"></div>
+<button type="button" class="ghost" id="forget-token" hidden>Glöm token</button>
+</section>
 <section class="heading"><div><p class="eyebrow" id="kind"></p><h1>Annonsrapport</h1><p id="url"></p></div><div class="meta"><span>Senast uppmätt</span><time id="date"></time></div></section>
 <nav aria-label="Rapportvyer" class="tabs"><button data-view="overview" aria-pressed="true">Översikt</button><button data-view="protocol" aria-pressed="false">Mätprotokoll</button><button data-view="changes" aria-pressed="false">Förändringar</button></nav>
 <section id="overview">
@@ -18,5 +29,14 @@
 <section id="changes" hidden class="panel"><p class="eyebrow">Jämförelse</p><h2>Förändringar sedan sist</h2><div id="history"></div></section>
 <footer><span id="profile"></span><button class="ghost" id="export">Hämta mätdata (JSON)</button></footer>
 </main>
+<dialog id="auth-dialog" aria-labelledby="auth-title">
+<form method="dialog"><button class="close" aria-label="Stäng">×</button></form>
+<h2 id="auth-title">Anslut till GitHub</h2>
+<p>Använd din egen token för att starta kontroller i <strong id="auth-repo"></strong>. Den finns i flikens minne tills du laddar om eller väljer Glöm token.</p>
+<form method="dialog" id="auth-form"><label for="github-credential">GitHub-token</label>
+<input id="github-credential" type="password" autocomplete="off" spellcheck="false" required>
+<button>Anslut och starta</button></form>
+<p><a id="token-help" target="_blank" rel="noopener noreferrer">Skapa token på GitHub</a>. Välj repot och behörigheten <strong>Actions → Read and write</strong>.</p>
+</dialog>
 <dialog id="dialog" aria-labelledby="dialogtitle"><form method="dialog"><button class="close" aria-label="Stäng">×</button></form><p class="eyebrow">Ny mätning</p><h2 id="dialogtitle">Kontrollera en URL</h2><p>Skapa ett uppdrag till Codex i ditt demo-repo, eller starta mätningen i GitHub Actions.</p><form id="build"><label for="target">Sidans adress</label><input id="target" type="url" required placeholder="https://exempel.se/artikel"><button>Skapa Codex-uppdrag</button></form><div id="promptbox" hidden><label for="prompt">Klistra in i Codex</label><textarea readonly id="prompt" rows="5"></textarea><button class="ghost" id="copy">Kopiera uppdrag</button></div><p id="actionpath">I GitHub väljer du Actions → URL-kontroll → Run workflow och anger sidans adress.</p></dialog>
 <script id="data" type="application/json"><!-- PAYLOAD --></script><script>/* APP */</script></body></html>

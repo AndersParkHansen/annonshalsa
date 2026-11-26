@@ -104,3 +104,9 @@ byId('copy').onclick=async()=>{
   try {await navigator.clipboard.writeText(byId('prompt').value);byId('copy').textContent='Kopierat';}
   catch {byId('copy').textContent='Texten är markerad för kopiering';}
 };
+
+// Standalone offline reports keep the Codex dialog. The hosted page adds direct runs.
+if (location.protocol === 'https:' && pages && /^[a-z0-9_.-]+$/i.test(repo)) {
+  import('./launch.js').then(({initLauncher}) => initLauncher(pages[1], repo))
+    .catch(() => { /* The link to GitHub Actions in the dialog stays usable. */ });
+}
