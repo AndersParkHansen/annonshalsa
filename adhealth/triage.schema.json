@@ -1,0 +1,57 @@
+{
+  "type": "object",
+  "properties": {
+    "scope": {
+      "type": "string"
+    },
+    "created": {
+      "type": "string"
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "fail",
+              "unknown"
+            ]
+          },
+          "hypothesis": {
+            "type": "string"
+          },
+          "next_step": {
+            "type": "string"
+          },
+          "knowledge": {
+            "type": "string",
+            "enum": [
+              "knowledge/matmetod.md",
+              "knowledge/triage.md",
+              "knowledge/beslut.md"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "status",
+          "hypothesis",
+          "next_step",
+          "knowledge"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "scope",
+    "created",
+    "findings"
+  ],
+  "additionalProperties": false
+}

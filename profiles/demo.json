@@ -1,0 +1,21 @@
+{
+  "name": "Fältjournalen · artikel",
+  "placements": [
+    {
+      "name": "Topp",
+      "selector": "[data-ad-slot='topp']",
+      "expectMedia": true
+    },
+    {
+      "name": "Mitt i artikel",
+      "selector": "[data-ad-slot='mitt']",
+      "lazy": true,
+      "expectMedia": true
+    },
+    {
+      "name": "Sidfot",
+      "selector": "[data-ad-slot='sidfot']",
+      "expectMedia": true
+    }
+  ]
+}

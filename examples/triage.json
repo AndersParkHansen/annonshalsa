@@ -1,0 +1,20 @@
+{
+  "scope": "820ee9cf0dc0eb843366a7bb8d86a6e7e47f2908c634a2bc5d9c65d4e686a59a",
+  "created": "2026-11-26T09:52:49+00:00",
+  "findings": [
+    {
+      "id": "b7503ff8bbfb853e",
+      "status": "fail",
+      "hypothesis": "Sidfotens annonsplats kan vara en tom behållare som artikeln aldrig fyller med media.",
+      "next_step": "Kontrollera sidfoten i fixtures/article.html, prova en synlig testbild och jämför ett omprov på samma skärmbredd.",
+      "knowledge": "knowledge/triage.md"
+    },
+    {
+      "id": "4f7f79070936c3e5",
+      "status": "fail",
+      "hypothesis": "Sidfotens annonsplats kan vara en tom behållare som artikeln aldrig fyller med media.",
+      "next_step": "Kontrollera sidfoten i fixtures/article.html, prova en synlig testbild och jämför ett omprov på samma skärmbredd.",
+      "knowledge": "knowledge/triage.md"
+    }
+  ]
+}

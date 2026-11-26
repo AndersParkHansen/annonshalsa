@@ -1,0 +1,62 @@
+name: URL-kontroll
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: "Publik HTTPS-adress. Lämna tom för den fiktiva demon."
+        required: false
+        type: string
+      profile:
+        description: "Valfri incheckad JSON-fil under profiles/ (t.ex. artikel.json)."
+        required: false
+        type: string
+      hosts:
+        description: "Extra resursvärdar separerade med komma, t.ex. cdn.example.org."
+        required: false
+        type: string
+  schedule:
+    - cron: '27 6 * * *'
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements.txt
+      - run: python -m playwright install --with-deps chromium
+      - id: target
+        name: Välj jämförelsemätning
+        env:
+          TARGET: ${{ inputs.url }}
+          PROFILE: ${{ inputs.profile }}
+          HOSTS: ${{ inputs.hosts }}
+        run: python tools/workflow.py key
+      - uses: actions/cache/restore@v4
+        with:
+          path: out/baseline
+          key: baseline-v1-${{ steps.target.outputs.key }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            baseline-v1-${{ steps.target.outputs.key }}-
+      - name: Mät URL och sammanställ rapport
+        env:
+          TARGET: ${{ inputs.url }}
+          PROFILE: ${{ inputs.profile }}
+          HOSTS: ${{ inputs.hosts }}
+        run: python tools/workflow.py run
+      - uses: actions/upload-artifact@v4
+        with:
+          name: annonsrapport-${{ github.run_id }}
+          path: out/result/
+          retention-days: 14
+          if-no-files-found: error
+      - uses: actions/cache/save@v4
+        with:
+          path: out/baseline
+          key: baseline-v1-${{ steps.target.outputs.key }}-${{ github.run_id }}-${{ github.run_attempt }}

@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="sv"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fältjournalen · En morgon vid vattnet</title>
+<style>body{font:18px/1.6 system-ui;margin:0 auto;max-width:760px;padding:24px} header{font: bold 32px Georgia;border-bottom:2px solid}article{min-height:150vh}.ad{padding:10px;background:#edf1f2;margin:20px 0;min-height:80px}img{display:block;width:160px;height:62px}footer{height:20vh}</style>
+<header>Fältjournalen</header><h1>En morgon vid vattnet</h1>
+<div class="ad" data-ad-slot="topp" aria-label="Annons"><small>Annons</small><img alt="Exempelannons" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='62'%3E%3Crect width='160' height='62' fill='%23266661'/%3E%3C/svg%3E"></div>
+<article><h2>Från bryggan</h2><p>En fiktiv artikel för att prova hur annonser beter sig när läsaren rör sig nedåt på sidan.</p></article>
+<div class="ad" data-ad-slot="mitt" aria-label="Annons"><small>Annons</small></div>
+<div class="ad" data-ad-slot="sidfot" aria-label="Annons"><small>Annons</small></div><footer>Fältjournalen</footer>
+<script>
+const slot = document.querySelector('[data-ad-slot="mitt"]');
+const loader = new IntersectionObserver(entries => {
+  if (entries.some(entry => entry.isIntersecting)) {
+    slot.append(document.querySelector('img').cloneNode());
+    loader.disconnect();
+  }
+});
+loader.observe(slot);
+</script></html>

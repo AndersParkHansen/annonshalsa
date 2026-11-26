@@ -1,0 +1,334 @@
+{
+  "schema": 1,
+  "scope": "820ee9cf0dc0eb843366a7bb8d86a6e7e47f2908c634a2bc5d9c65d4e686a59a",
+  "created": "2026-11-26T09:52:49+00:00",
+  "url": "https://faltjournalen.example/artikel/en-morgon-vid-vattnet",
+  "demo": true,
+  "profile": "Fältjournalen · artikel",
+  "checks": [
+    {
+      "id": "e47df5195679bc7f",
+      "device": "desktop",
+      "rule": "page",
+      "slot": "Hela sidan",
+      "status": "pass",
+      "evidence": "HTML lästes med HTTP 200. Samma utfall vid omprov."
+    },
+    {
+      "id": "abcba1f0d297748e",
+      "device": "desktop",
+      "rule": "inventory",
+      "slot": "Hela sidan",
+      "status": "pass",
+      "evidence": "3 unika platser observerades med profilens selektorer eller generella annonsmarkörer. Samma utfall vid omprov."
+    },
+    {
+      "id": "7213610e643a690a",
+      "device": "desktop",
+      "rule": "presence",
+      "slot": "Topp",
+      "status": "pass",
+      "evidence": "1 träffar för [data-ad-slot='topp']. Samma utfall vid omprov."
+    },
+    {
+      "id": "4145949a196f63e2",
+      "device": "desktop",
+      "rule": "presence",
+      "slot": "Mitt i artikel",
+      "status": "pass",
+      "evidence": "1 träffar för [data-ad-slot='mitt']. Samma utfall vid omprov."
+    },
+    {
+      "id": "a633156efd32e9da",
+      "device": "desktop",
+      "rule": "presence",
+      "slot": "Sidfot",
+      "status": "pass",
+      "evidence": "1 träffar för [data-ad-slot='sidfot']. Samma utfall vid omprov."
+    },
+    {
+      "id": "53b1305aa0e5106f",
+      "device": "desktop",
+      "rule": "render",
+      "slot": "Topp",
+      "status": "pass",
+      "evidence": "En bild, video eller canvas med synlig yta observerades i vyn. Samma utfall vid omprov."
+    },
+    {
+      "id": "6ad1e6006c2d6ebc",
+      "device": "desktop",
+      "rule": "render",
+      "slot": "Mitt i artikel",
+      "status": "pass",
+      "evidence": "En bild, video eller canvas med synlig yta observerades i vyn. Samma utfall vid omprov."
+    },
+    {
+      "id": "1cba846a0afc53c8",
+      "device": "desktop",
+      "rule": "lazy",
+      "slot": "Mitt i artikel",
+      "status": "pass",
+      "evidence": "Tom före scrollning, synligt media när platsen nåddes. Samma utfall vid omprov."
+    },
+    {
+      "id": "b7503ff8bbfb853e",
+      "device": "desktop",
+      "rule": "render",
+      "slot": "Sidfot",
+      "status": "fail",
+      "evidence": "Platsen kom in i vyn men saknade synligt media under mätfönstret. Samma utfall vid omprov."
+    },
+    {
+      "id": "13e16c00edc07c5a",
+      "device": "mobile",
+      "rule": "page",
+      "slot": "Hela sidan",
+      "status": "pass",
+      "evidence": "HTML lästes med HTTP 200. Samma utfall vid omprov."
+    },
+    {
+      "id": "752a3a64b5e307b1",
+      "device": "mobile",
+      "rule": "inventory",
+      "slot": "Hela sidan",
+      "status": "pass",
+      "evidence": "3 unika platser observerades med profilens selektorer eller generella annonsmarkörer. Samma utfall vid omprov."
+    },
+    {
+      "id": "d5141a25b4f003ed",
+      "device": "mobile",
+      "rule": "presence",
+      "slot": "Topp",
+      "status": "pass",
+      "evidence": "1 träffar för [data-ad-slot='topp']. Samma utfall vid omprov."
+    },
+    {
+      "id": "c46d5192788eabf4",
+      "device": "mobile",
+      "rule": "presence",
+      "slot": "Mitt i artikel",
+      "status": "pass",
+      "evidence": "1 träffar för [data-ad-slot='mitt']. Samma utfall vid omprov."
+    },
+    {
+      "id": "fa6fab095413c58d",
+      "device": "mobile",
+      "rule": "presence",
+      "slot": "Sidfot",
+      "status": "pass",
+      "evidence": "1 träffar för [data-ad-slot='sidfot']. Samma utfall vid omprov."
+    },
+    {
+      "id": "bcdcc551b030c91f",
+      "device": "mobile",
+      "rule": "render",
+      "slot": "Topp",
+      "status": "pass",
+      "evidence": "En bild, video eller canvas med synlig yta observerades i vyn. Samma utfall vid omprov."
+    },
+    {
+      "id": "aa2567851524efed",
+      "device": "mobile",
+      "rule": "render",
+      "slot": "Mitt i artikel",
+      "status": "pass",
+      "evidence": "En bild, video eller canvas med synlig yta observerades i vyn. Samma utfall vid omprov."
+    },
+    {
+      "id": "338c3789a890e9fd",
+      "device": "mobile",
+      "rule": "lazy",
+      "slot": "Mitt i artikel",
+      "status": "pass",
+      "evidence": "Tom före scrollning, synligt media när platsen nåddes. Samma utfall vid omprov."
+    },
+    {
+      "id": "4f7f79070936c3e5",
+      "device": "mobile",
+      "rule": "render",
+      "slot": "Sidfot",
+      "status": "fail",
+      "evidence": "Platsen kom in i vyn men saknade synligt media under mätfönstret. Samma utfall vid omprov."
+    }
+  ],
+  "measurements": {
+    "desktop": [
+      {
+        "http": 200,
+        "steps": 3,
+        "slots": [
+          {
+            "name": "Topp",
+            "key": "[\"[\\\"profile\\\",\\\"Topp\\\"]\",1]",
+            "expected": "Topp",
+            "seen": true,
+            "visibleMedia": true,
+            "frame": false,
+            "initialInView": true,
+            "initialMedia": true
+          },
+          {
+            "name": "Mitt i artikel",
+            "key": "[\"[\\\"profile\\\",\\\"Mitt i artikel\\\"]\",1]",
+            "expected": "Mitt i artikel",
+            "seen": true,
+            "visibleMedia": true,
+            "frame": false,
+            "initialInView": false,
+            "initialMedia": false
+          },
+          {
+            "name": "Sidfot",
+            "key": "[\"[\\\"profile\\\",\\\"Sidfot\\\"]\",1]",
+            "expected": "Sidfot",
+            "seen": true,
+            "visibleMedia": false,
+            "frame": false,
+            "initialInView": false,
+            "initialMedia": false
+          }
+        ],
+        "blockedHosts": [],
+        "failedTypes": [],
+        "bottom": true,
+        "partial": false
+      },
+      {
+        "http": 200,
+        "steps": 3,
+        "slots": [
+          {
+            "name": "Topp",
+            "key": "[\"[\\\"profile\\\",\\\"Topp\\\"]\",1]",
+            "expected": "Topp",
+            "seen": true,
+            "visibleMedia": true,
+            "frame": false,
+            "initialInView": true,
+            "initialMedia": true
+          },
+          {
+            "name": "Mitt i artikel",
+            "key": "[\"[\\\"profile\\\",\\\"Mitt i artikel\\\"]\",1]",
+            "expected": "Mitt i artikel",
+            "seen": true,
+            "visibleMedia": true,
+            "frame": false,
+            "initialInView": false,
+            "initialMedia": false
+          },
+          {
+            "name": "Sidfot",
+            "key": "[\"[\\\"profile\\\",\\\"Sidfot\\\"]\",1]",
+            "expected": "Sidfot",
+            "seen": true,
+            "visibleMedia": false,
+            "frame": false,
+            "initialInView": false,
+            "initialMedia": false
+          }
+        ],
+        "blockedHosts": [],
+        "failedTypes": [],
+        "bottom": true,
+        "partial": false
+      }
+    ],
+    "mobile": [
+      {
+        "http": 200,
+        "steps": 3,
+        "slots": [
+          {
+            "name": "Topp",
+            "key": "[\"[\\\"profile\\\",\\\"Topp\\\"]\",1]",
+            "expected": "Topp",
+            "seen": true,
+            "visibleMedia": true,
+            "frame": false,
+            "initialInView": true,
+            "initialMedia": true
+          },
+          {
+            "name": "Mitt i artikel",
+            "key": "[\"[\\\"profile\\\",\\\"Mitt i artikel\\\"]\",1]",
+            "expected": "Mitt i artikel",
+            "seen": true,
+            "visibleMedia": true,
+            "frame": false,
+            "initialInView": false,
+            "initialMedia": false
+          },
+          {
+            "name": "Sidfot",
+            "key": "[\"[\\\"profile\\\",\\\"Sidfot\\\"]\",1]",
+            "expected": "Sidfot",
+            "seen": true,
+            "visibleMedia": false,
+            "frame": false,
+            "initialInView": false,
+            "initialMedia": false
+          }
+        ],
+        "blockedHosts": [],
+        "failedTypes": [],
+        "bottom": true,
+        "partial": false
+      },
+      {
+        "http": 200,
+        "steps": 3,
+        "slots": [
+          {
+            "name": "Topp",
+            "key": "[\"[\\\"profile\\\",\\\"Topp\\\"]\",1]",
+            "expected": "Topp",
+            "seen": true,
+            "visibleMedia": true,
+            "frame": false,
+            "initialInView": true,
+            "initialMedia": true
+          },
+          {
+            "name": "Mitt i artikel",
+            "key": "[\"[\\\"profile\\\",\\\"Mitt i artikel\\\"]\",1]",
+            "expected": "Mitt i artikel",
+            "seen": true,
+            "visibleMedia": true,
+            "frame": false,
+            "initialInView": false,
+            "initialMedia": false
+          },
+          {
+            "name": "Sidfot",
+            "key": "[\"[\\\"profile\\\",\\\"Sidfot\\\"]\",1]",
+            "expected": "Sidfot",
+            "seen": true,
+            "visibleMedia": false,
+            "frame": false,
+            "initialInView": false,
+            "initialMedia": false
+          }
+        ],
+        "blockedHosts": [],
+        "failedTypes": [],
+        "bottom": true,
+        "partial": false
+      }
+    ]
+  },
+  "viewports": {
+    "desktop": [
+      1440,
+      900
+    ],
+    "mobile": [
+      390,
+      844
+    ]
+  },
+  "comparison": {
+    "state": "first",
+    "items": []
+  }
+}
