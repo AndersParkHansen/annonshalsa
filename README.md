@@ -2,7 +2,11 @@
 
 Ge Codex en webbadress och få en fristående HTML-rapport, mätdata och en triage med spårbara evidens-ID:n. Repot innehåller en helt fiktiv artikelsida, en webbläsarbaserad mätmotor, agentinstruktioner och en versionshanterad kunskapswiki.
 
-**Prova rapporten direkt.** Öppna `docs/index.html` i webbläsaren. Flikarna visar fynd, alla mätningar och förändringar. **Ny URL-kontroll** skapar ett färdigt uppdrag att klistra in i Codex. Rapporten går även att öppna lokalt utan nätverk.
+**Kör direkt från GitHub Pages.** Öppna [Annonshälsa](https://andersparkhansen.github.io/annonshalsa/), ange sidans URL och välj **Starta kontroll**. Ett domännamn utan schema får automatiskt HTTPS. Första gången i fliken behöver du ange en egen GitHub-token. För repots ägare passar en fine-grained token begränsad till `annonshalsa` med **Actions → Read and write**. GitHub avgör vilka repon och tokentyper som är tillgängliga för respektive samarbetspartner. Kontot behöver skrivåtkomst för att starta ett arbetsflöde.
+
+Sidan skickar token direkt till GitHubs API. Den rensas när du laddar om, lämnar sidan eller väljer **Glöm token**. Körnings-ID finns i adressens `#korning=…` så att du kan återvända och följa samma mätning. När kontrollen är klar finns en länk till ZIP-rapporten. GitHub kan kräva att du är inloggad för att hämta artefakten. Öppna `index.html` i den uppackade mappen.
+
+Den incheckade demorapporten kan även öppnas lokalt via `docs/index.html`. I en fristående rapport skapar **Ny URL-kontroll** ett uppdrag till Codex.
 
 ## På personliga GitHub med Codex Cloud
 
@@ -10,7 +14,7 @@ Ge Codex en webbadress och få en fristående HTML-rapport, mätdata och en tria
 2. Anslut repot till din Codex-molnmiljö. Använd Python 3.12. Kör `python -m pip install -r requirements.txt` och `python -m playwright install --with-deps chromium` vid miljöförberedelsen. Miljön behöver åtkomst till de mål och resursvärdar som ska mätas. Alternativt gör GitHub Actions själva webbmätningen.
 3. Slå på Pages via **Settings → Pages → Deploy from a branch → main → /docs → Save**. Det publicerar den incheckade demorapporten. Efter ändringar i rapportmallen eller demot, be Codex köra om demon och ersätta `docs/index.html` i en PR.
 4. Ge Codex uppdraget *”Kör demon med repots skill annonshalsa. Visa vilken plats som fortfarande är tom efter omprov på båda enheterna, validera triagen och ange vilka wikisidor du använde.”* För en riktig kontroll byter du ut ”demon” mot en publik HTTPS-URL.
-5. Du kan även välja **Actions → URL-kontroll → Run workflow** och ange URL, eventuell profil och extra resursvärdar. Ladda ned artefakten **annonsrapport** från körningen. Öppna `index.html` eller ge `report.json` till Codex för triage. Pages är en statisk rapportläsare. Chromium körs i Actions, Codex-miljön eller på din dator.
+5. Du kan även välja **Actions → URL-kontroll → Run workflow** och ange URL, eventuell profil och extra resursvärdar. Ladda ned artefakten **annonsrapport** från körningen. Öppna `index.html` eller ge `report.json` till Codex för triage. Pages visar rapporten och anropar GitHubs API för att starta och följa URL-kontrollen. Chromium körs i Actions, Codex-miljön eller på din dator.
 
 Schemat kör den fiktiva sidan varje dag kl. 06.27 UTC när schemalagda Actions är aktiverade på standardgrenen. Manuella mätningar kör den URL du anger. Actions försöker läsa föregående baslinje från GitHubs cache och sparar nya resultat som artefakt i 14 dagar. Om cachen saknas visas ”Första mätningen”. Rollbaserad repoåtkomst gäller även dessa körningar. Lägg bara in adresser som kan visas för repots läsare.
 
